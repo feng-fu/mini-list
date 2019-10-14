@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="year"><text>{{currentYear}}</text></view>
+  <view class="month">
+    <view class="prev" bindtap="preMonth"></view>
+    <view class="month-view">
+      <view
+        wx:for="{{monthList}}"
+        wx:key="index"
+        class="month-item {{index === 2 ? 'current-month': ''}}"
+      ><text>{{item}}</text></view>
+    </view>
+    <view class="next" bindtap="nextMonth"></view>
+  </view>
+  <view class="date-picker">
+    <view class="week-list">
+      <view class="date-item"><text>SUN</text></view>
+      <view class="date-item"><text>MON</text></view>
+      <view class="date-item"><text>TUE</text></view>
+      <view class="date-item"><text>WED</text></view>
+      <view class="date-item"><text>THU</text></view>
+      <view class="date-item"><text>FRI</text></view>
+      <view class="date-item"><text>SAT</text></view>
+    </view>
+    <view class="date-list">
+      <view wx:for="{{firstDayWeek}}" wx:key="index" class="date-item"><text></text></view>
+      <view
+        wx:for="{{monthDayCount}}"
+        wx:key="index"
+        class="date-item {{currentDate === index + 1 ? 'active' : ''}}"
+        data-date="{{index + 1}}"
+        bindtap="chooseDate"
+      ><text>{{index + 1}}</text></view>
+    </view>
+  </view>
+
+  <view class="list-container">
+    <view class="list-item">
+      <view class="item-head">
+        <view><text>做一件事情</text></view>
+        <view class="time"><text>19:30</text></view>
+      </view>
+      <view class="description">2019-01-01</view>
+    </view>
+  </view>
+
+  <view class="bottom-part {{showForm ? 'active' : ''}}">
+    <view class="add-btn">
+      <button bindtap="toggleAddForm">+</button>
+    </view>
+    <view class="add">
+      <view class="add-form">
+        <view class="form-item">
+          <text class="label">姓名</text>
+          <input type="text" cursor-spacing="150" />
+        </view>
+        <view class="form-item">
+          <text class="label">姓名</text>
+          <input type="text" cursor-spacing="110" />
+        </view>
+        <view class="form-item">
+          <text class="label">姓名</text>
+          <input type="text" cursor-spacing="70" />
+        </view>
+      </view>
+      <button class="add-confirm">确 定</button>
+    </view>
+  </view>
+</view>

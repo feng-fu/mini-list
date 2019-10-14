@@ -1,0 +1,242 @@
+/**index.wxss**/
+
+page {
+  background: #001b61;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.year {
+  color: #fff;
+  opacity: .6;
+  font-size: 40rpx;
+}
+
+.month {
+  color: #fff;
+  display: flex;
+  opacity: .8;
+  margin-bottom: 50rpx;
+  margin-top: 30rpx;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.month .prev {
+  width: 0;
+  height: 0;
+  margin-top: 40rpx;
+  border-width: 15rpx 20rpx;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  position: relative;
+}
+
+.month .prev:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 14rpx 18rpx;
+  border-style: solid;
+  border-color:  transparent #001b61 transparent transparent;
+  position: absolute;
+  top: -14rpx;
+  left: -12rpx;
+}
+.month .next {
+  width: 0;
+  height: 0;
+  margin-top: 40rpx;
+  border-width: 15rpx 20rpx;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  position: relative;
+}
+
+.month .next:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 14rpx 18rpx;
+  border-style: solid;
+  border-color:  transparent transparent transparent #001b61;
+  position: absolute;
+  top: -14rpx;
+  left: -23rpx;
+}
+
+.month .month-view {
+  display: flex;
+  justify-content: center;
+}
+
+.month .month-item {
+  position: relative;
+  padding-top: 50rpx;
+  width: 120rpx;
+  text-align: center;
+}
+
+.month .month-item:before {
+  content: '';
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background-color: #feb201;
+  position: absolute;
+  top: 10rpx;
+  left: 50%;
+  margin-left: -10rpx;
+}
+.month .month-item:first-child:before,
+.month .month-item:last-child:before {
+  width: 10rpx;
+  height: 10rpx;
+  top: 15px;
+}
+
+.month .current-month:before {
+  width: 30rpx;
+  height: 30rpx;
+  top: 0;
+  margin-left: -15rpx;
+}
+
+
+.date-picker {
+  color: rgb(29, 102, 146);
+  width: 560rpx;
+}
+.week-list {
+  display: flex;
+  justify-content: center;
+}
+
+.date-item {
+  margin: 0 10rpx;
+  overflow: hidden;
+  text-align: center;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.date-item.active {
+  background-color: #feb201;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.week-list .date-item {
+  font-size: 24rpx;
+}
+
+.date-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-container {
+  width: 100%;
+  margin-top: 100rpx;
+  color: #fff;
+}
+
+.list-item {
+    background-color: rgb(2, 36, 104);
+    width: 80%;
+    margin-left: 15%;
+    padding: 10rpx 30rpx;
+    height: 120rpx;
+}
+
+.list-item .item-head {
+  display: flex;
+  justify-content: space-between;
+  line-height: 60rpx;
+}
+.list-item .item-head .time {
+  opacity: .6;
+}
+.list-item .description {
+  text-align: center;
+  opacity: .4;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.bottom-part {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  background-color: rgb(7, 55, 128);
+  transition: all .2s;
+}
+.bottom-part.active {
+  height: 500rpx;
+}
+.add-btn {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  padding: 10rpx;
+  position: absolute;
+  left: 50%;
+  top: -50rpx;
+  margin-left: -50rpx;
+  background-color: #001b61;
+  transition: all .2s;
+}
+.bottom-part.active .add-btn {
+  transform: rotate(45deg);
+}
+.add-btn button {
+    width: 80rpx;
+    height: 80rpx;
+    background-color: #feb201;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 74rpx;
+    text-align: center;
+    font-size: 60rpx;
+    padding: 0;
+}
+.add-confirm  {
+  margin-top: 50rpx;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  background-color: rgb(254, 178, 1);
+  border-radius: 0;
+}
+.add-form {
+  padding-top: 80rpx;
+}
+
+.form-item {
+  width: 690rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  background-color: #001b61;
+  margin: 10rpx auto;
+  display: flex;
+}
+
+.form-item .label {
+  padding: 0 20rpx 0 40rpx;
+  opacity: .8;
+}
+.form-item input {
+  flex: 1;
+  height: 100%;
+}
